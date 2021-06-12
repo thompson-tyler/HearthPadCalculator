@@ -5,11 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Pad Calculator</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script>
         function drawStone() {
-            let ctx = document.getElementById("canvas").getContext("2d");
+            let ctx = document.getElementById("pad-canvas").getContext("2d");
 
             let width = getParam("width");
             let depth = getParam("depth");
@@ -21,10 +19,9 @@
 
             if (is_corner) {
 
-                
                 // overall width
                 let w_major = r_clear + (width + depth + f_clear) / Math.SQRT2;
-                
+
                 // let bevel_width = 17 + 3 / 16;
                 let bevel_width = w_major * 0.3;
 
@@ -176,13 +173,13 @@
                 ctx.stroke();
 
                 // draw fireplace
-                ctx.beginPath();
-                ctx.moveTo(xCenter - (width / 2) * scale, r_clear * scale);
-                ctx.lineTo(xCenter - (width / 2) * scale, (r_clear + depth) * scale);
-                ctx.lineTo(xCenter + (width / 2) * scale, (r_clear + depth) * scale);
-                ctx.lineTo(xCenter + (width / 2) * scale, r_clear * scale);
-                ctx.closePath();
-                ctx.stroke();
+                // ctx.beginPath();
+                // ctx.moveTo(xCenter - (width / 2) * scale, r_clear * scale);
+                // ctx.lineTo(xCenter - (width / 2) * scale, (r_clear + depth) * scale);
+                // ctx.lineTo(xCenter + (width / 2) * scale, (r_clear + depth) * scale);
+                // ctx.lineTo(xCenter + (width / 2) * scale, r_clear * scale);
+                // ctx.closePath();
+                // ctx.stroke();
 
                 // depth measurement
                 ctx.beginPath();
@@ -315,7 +312,7 @@
             <td style="padding-right: 20px;">
                 <div align="center">
                     <form onsubmit="drawStone(); return false" autocomplete="off">
-                        <table>
+                        <table style="color: black;">
                             <tr>
                                 <td style="text-align: right;">Style: </td>
                                 <td>
@@ -326,9 +323,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="text-align: right;">Width: </td>
+                                <td style="text-align: right;">Stove Width: </td>
                                 <td>
-                                    <input style="text-align: right;" type="text" id="width-input" size="2" required
+                                    <input type="text" id="width-input" style="background-color: white; text-align: right; border: grey solid 1pt;" size="2" required
                                         pattern="[0-9]+"
                                         title="Must be a whole number. Use dropdown for decimals"></input>
                                     - <select id="width-frac"></select>
@@ -336,9 +333,9 @@
                                 <td>in</td>
                             </tr>
                             <tr>
-                                <td style="text-align: right;">Depth: </td>
+                                <td style="text-align: right;">Stove Depth: </td>
                                 <td>
-                                    <input style="text-align: right;" type="text" id="depth-input" size="2" required
+                                    <input type="text" id="depth-input" style="background-color: white; text-align: right; border: grey solid 1pt;" size="2" required
                                         pattern="[0-9]+"
                                         title="Must be a whole number. Use dropdown for decimals"></input>
                                     - <select id="depth-frac"></select>
@@ -346,11 +343,11 @@
                                 <td>in</td>
                             </tr>
                             <tr>
-                                <td style="text-align: right;">Rear Clearance: </td>
+                                <td style="text-align: right;">Rear Corner Clearance: </td>
                                 <td>
-                                    <input style="text-align: right;" type="text" id="rear-clearance-input" size="2"
+                                    <input type="text" id="rear-clearance-input" style="background-color: white; text-align: right; border: grey solid 1pt;" size="2"
                                         required pattern="[0-9]+"
-                                        title="Must be a whole number. Use dropdown for decimals" value="8"></input>
+                                        title="Must be a whole number. Use dropdown for decimals"></input>
                                     - <select id="rear-clearance-frac"></select>
                                 </td>
                                 <td>in</td>
@@ -358,15 +355,14 @@
                             <tr>
                                 <td style="text-align: right;">Front Clearance: </td>
                                 <td>
-                                    <input style="text-align: right;" type="text" id="front-clearance-input" size="2"
+                                    <input type="text" id="front-clearance-input" style="background-color: white; text-align: right; border: grey solid 1pt;" size="2"
                                         required pattern="[0-9]+"
-                                        title="Must be a whole number. Use dropdown for decimals" value="16"></input>
+                                        title="Must be a whole number. Use dropdown for decimals"></input>
                                     - <select id="front-clearance-frac"></select>
                                 </td>
                                 <td>in</td>
                             </tr>
                         </table>
-                        <br>
                         <div align="center">
                             <button type="submit">Submit</button>
                         </div>
@@ -375,14 +371,14 @@
             </td>
             <td>
                 <div align="center">
-                    <canvas id="canvas" width="500" height="500"></canvas>
+                    <canvas id="pad-canvas" width="500" height="500"></canvas>
                 </div>
             </td>
         </tr>
         <tr>
             <td></td>
             <td style="text-align: center;">
-                <p id="rec-pad" style="font-weight: bold;"></p>
+                <a id="rec-pad" style="font-weight: bold; text-decoration: underline;" href="https://graysenwoods.com/hearth-pads.html" target="_blank"></a>
             </td>
         </tr>
     </table>
