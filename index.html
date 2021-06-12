@@ -267,7 +267,7 @@
         }
 
         let message_prepend = "Recommended Hearth Pad: ";
-        let err_message = "Can't find a large enough pad";
+        let err_message = "Due to its large size, this pad will need to be custom ordered";
 
         let corner_pads = new Map();
         corner_pads.set(32.25, "C-32");
@@ -327,7 +327,7 @@
                                 <td>
                                     <input type="text" id="width-input" style="background-color: white; text-align: right; border: grey solid 1pt;" size="2" required
                                         pattern="[0-9]+"
-                                        title="Must be a whole number. Use dropdown for decimals"></input>
+                                        title="Must be a positive whole number. Use dropdown for decimals"></input>
                                     - <select id="width-frac"></select>
                                 </td>
                                 <td>in</td>
@@ -337,7 +337,7 @@
                                 <td>
                                     <input type="text" id="depth-input" style="background-color: white; text-align: right; border: grey solid 1pt;" size="2" required
                                         pattern="[0-9]+"
-                                        title="Must be a whole number. Use dropdown for decimals"></input>
+                                        title="Must be a positive whole number. Use dropdown for decimals"></input>
                                     - <select id="depth-frac"></select>
                                 </td>
                                 <td>in</td>
@@ -347,7 +347,7 @@
                                 <td>
                                     <input type="text" id="rear-clearance-input" style="background-color: white; text-align: right; border: grey solid 1pt;" size="2"
                                         required pattern="[0-9]+"
-                                        title="Must be a whole number. Use dropdown for decimals"></input>
+                                        title="Must be a positive whole number. Use dropdown for decimals"></input>
                                     - <select id="rear-clearance-frac"></select>
                                 </td>
                                 <td>in</td>
@@ -357,7 +357,7 @@
                                 <td>
                                     <input type="text" id="front-clearance-input" style="background-color: white; text-align: right; border: grey solid 1pt;" size="2"
                                         required pattern="[0-9]+"
-                                        title="Must be a whole number. Use dropdown for decimals"></input>
+                                        title="Must be a positive whole number. Use dropdown for decimals"></input>
                                     - <select id="front-clearance-frac"></select>
                                 </td>
                                 <td>in</td>
@@ -378,7 +378,7 @@
         <tr>
             <td></td>
             <td style="text-align: center;">
-                <a id="rec-pad" style="font-weight: bold; text-decoration: underline;" href="https://graysenwoods.com/hearth-pads.html" target="_blank"></a>
+                <a id="rec-pad" style="font-weight: bold; text-decoration: underline;" href="https://graysenwoods.com/pdf/gw_brochure.pdf" target="_blank"></a>
             </td>
         </tr>
     </table>
