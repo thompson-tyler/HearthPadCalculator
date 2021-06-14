@@ -307,81 +307,74 @@
 </head>
 
 <body>
-    <table align="center">
-        <tr>
-            <td style="padding-right: 20px;">
-                <div align="center">
-                    <form onsubmit="drawStone(); return false" autocomplete="off">
-                        <table style="color: black;">
-                            <tr>
-                                <td style="text-align: right;">Style: </td>
-                                <td>
-                                    <select id="pad-style" align="center">
-                                        <option>Standard</option>
-                                        <option>Corner</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: right;">Stove Width: </td>
-                                <td>
-                                    <input type="text" id="width-input" style="background-color: white; text-align: right; border: grey solid 1pt;" size="2" required
-                                        pattern="[0-9]+"
-                                        title="Must be a positive whole number. Use dropdown for decimals"></input>
-                                    - <select id="width-frac"></select>
-                                </td>
-                                <td>in</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: right;">Stove Depth: </td>
-                                <td>
-                                    <input type="text" id="depth-input" style="background-color: white; text-align: right; border: grey solid 1pt;" size="2" required
-                                        pattern="[0-9]+"
-                                        title="Must be a positive whole number. Use dropdown for decimals"></input>
-                                    - <select id="depth-frac"></select>
-                                </td>
-                                <td>in</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: right;">Rear Corner Clearance: </td>
-                                <td>
-                                    <input type="text" id="rear-clearance-input" style="background-color: white; text-align: right; border: grey solid 1pt;" size="2"
-                                        required pattern="[0-9]+"
-                                        title="Must be a positive whole number. Use dropdown for decimals"></input>
-                                    - <select id="rear-clearance-frac"></select>
-                                </td>
-                                <td>in</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: right;">Front Clearance: </td>
-                                <td>
-                                    <input type="text" id="front-clearance-input" style="background-color: white; text-align: right; border: grey solid 1pt;" size="2"
-                                        required pattern="[0-9]+"
-                                        title="Must be a positive whole number. Use dropdown for decimals"></input>
-                                    - <select id="front-clearance-frac"></select>
-                                </td>
-                                <td>in</td>
-                            </tr>
-                        </table>
-                        <div align="center">
-                            <button type="submit">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </td>
-            <td>
-                <div align="center">
-                    <canvas id="pad-canvas" width="500" height="500"></canvas>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td style="text-align: center;">
-                <a id="rec-pad" style="font-weight: bold; text-decoration: underline;" href="https://graysenwoods.com/pdf/gw_brochure.pdf" target="_blank"></a>
-            </td>
-        </tr>
-    </table>
+    <div align="center" style="display: flex; flex-wrap: wrap;">
+        <div>
+            <form onsubmit="drawStone(); return false" autocomplete="off">
+                <table style="color: black;">
+                    <tr>
+                        <td style="text-align: right;">Style: </td>
+                        <td>
+                            <select id="pad-style" align="center">
+                                <option>Standard</option>
+                                <option>Corner</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">Stove Width: </td>
+                        <td>
+                            <input type="text" id="width-input"
+                                style="background-color: white; text-align: right; border: grey solid 1pt;" size="2"
+                                required pattern="[0-9]+"
+                                title="Must be a positive whole number. Use dropdown for decimals"></input>
+                            - <select id="width-frac"></select>
+                        </td>
+                        <td>in</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">Stove Depth: </td>
+                        <td>
+                            <input type="text" id="depth-input"
+                                style="background-color: white; text-align: right; border: grey solid 1pt;" size="2"
+                                required pattern="[0-9]+"
+                                title="Must be a positive whole number. Use dropdown for decimals"></input>
+                            - <select id="depth-frac"></select>
+                        </td>
+                        <td>in</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">Rear Corner Clearance: </td>
+                        <td>
+                            <input type="text" id="rear-clearance-input"
+                                style="background-color: white; text-align: right; border: grey solid 1pt;" size="2"
+                                required pattern="[0-9]+"
+                                title="Must be a positive whole number. Use dropdown for decimals"></input>
+                            - <select id="rear-clearance-frac"></select>
+                        </td>
+                        <td>in</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">Front Clearance: </td>
+                        <td>
+                            <input type="text" id="front-clearance-input"
+                                style="background-color: white; text-align: right; border: grey solid 1pt;" size="2"
+                                required pattern="[0-9]+"
+                                title="Must be a positive whole number. Use dropdown for decimals"></input>
+                            - <select id="front-clearance-frac"></select>
+                        </td>
+                        <td>in</td>
+                    </tr>
+                </table>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div align="center">
+            <canvas id="pad-canvas" width="500" height="500"></canvas>
+            <br>
+            <a id="rec-pad" style="font-weight: bold; text-decoration: underline;" href="https://graysenwoods.com/pdf/gw_brochure.pdf" target="_blank"></a>
+        </div>
+    </div>
     <script>
         addFractions("width-frac");
         addFractions("depth-frac");
